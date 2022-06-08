@@ -1,0 +1,439 @@
+# INTRO À CRIAÇÃO DE WEBSITES COM HTML5 E CSS3
+
+### Intro ao curso de HTML
+
+* Estrutura básica
+
+  Criado em 1991 por Tim Berners-Lee.
+
+  #### Como funciona o elemento HTML
+
+  Ex:
+
+  < h1 class="titulo">Título</h1 > 
+
+  (dei espaço antes dos <> pra conseguir ver o código aqui)
+
+  < h1 = tag de abertura
+
+  class="titulo"> = atributo
+
+  Título = conteúdo
+
+  </h1 > = fechando tag
+
+  #### Tag de abertura
+
+  diz o tipo do elemento
+
+  #### Atributo
+
+  Pode mudar uma funcionalidade, aparência ou dizer algo ao navegador
+
+  #### Estrutura básica
+
+  < !DOCTYPE html>  = nao é elemento html, apenas diz ao navegador o que ele ta escrevendo
+
+  <html > = tudo que diz respeito ao documento e seu conteúdop está nesse elemento
+
+  < head >  = tem metainformações, infos que o navegador necessita, um buscador de internet
+
+  < meta > = pode ser usada para várias coisas, o exemplo é o charset (?), que é como o navegador faz o encoding dos caracteres
+
+  < title > < /title > = dá o título do navegador
+
+  < /head > = fechamento da head
+
+  < body > = onde está o conteúdo da página
+
+  < /body > = fecha body
+
+  < /html > = fecha html
+
+### Semântica
+
+Durante anos, todo o conteúdo do HTML era feito através do < div>. O que fazia que tivéssemos de buscar significado através das classes. Mas com o HTML5 vieram novos elementos de semântica
+
+< section > = seção genérica de conteúdo, como lista de artigos
+
+< header > = cabeçalho de uma página ou parte de uma página
+
+< article > = conteúdo relevante de uma página, como um artigo
+
+< aside > = relacionado ao conteúdo principal da página, como a biografia de um autor ou links relacionados. geralmente representado por uma barra lateral
+
+< footer > =  rodapé de uma página ou section
+
+< h1 > até < h6 > = representam a importância dos títulos dentro de uma página c seus variados tamanhos. só pode haver um H1 por página
+
+## Textos e link
+
+### Tags para textos
+
+A criação do HTML foi para compartilhar txts e documentos. Após 30 anos, esse conteúdo ainda é relevante na web. < h1 > - < h6 > servem para indicar visualmente a importância e a localização de seções na página. Mas, para textos maiores e mais longos, usamos **o elemento < p >**, que representa um parágrafo, suportando texto, imagem, código, vídeos e vários outros tipos de conteúdo.
+
+### Tags para links
+
+O **elemento < a >** também é muito importante. Ele é uma âncora e interliga vários conteúdos na web. Ele tem vários atributos, mas agora focamos em apenas dois:
+
+< a href="linkedin.com/in/vilaboim">Linkedin<E-mail</ a > O **Href** é o hiperlink para onde a âncora está apontando, seja no seu site, página interna, e-mail (se usar mailto) e telefone (se usar tel). Ex: < a href="mailto:alagoanissimo@gmail.com"> E-mail< /a >
+
+O **target** serve para indicar como o link será aberto. Por enquanto vamos ver apenas um valor, o _blank, que indica a abertura do link em uma nova aba. Ex: < a target="blank">Link< /a >
+
+## Imagens
+
+O elemento < img > é simples e tem apenas dois atributos próprios.
+
+1. O source. Obrigatório e guarda o caminho das imagens do seu site ou de outro lugar. Ex: < img src="img/avatar.jpg" >
+2. O alt não é obrigatório, mas muito recomendado por melhorar a acessibilidade. Mostra a descrição da foto quando ela não é carregada e leitores de tela usam esse elemento para traduzir a imagem para deficientes visuais. Ex: < img alt="Foto de Mateus Magalhães" >
+
+## Como organizar listas com HTML
+
+### Tags li,ul e ol
+
+Listas servem pra agrupar coleções de itens. No nosso caso, uma lista com contatos.
+
+< ul > = representa uma lista em que a ordem dos itens não é importante
+
+< ol >= nela, a ordem dos itens importa. representamos eles com números, letras ou algarismos romanos
+
+< li > = é um item dessa lista
+
+##  Introdução ao CSS3
+
+Depois da invenção do HTML, a necessidade de formatar páginas surgiu. Em 96 foi criada a linguagem de estilo chamada de CSS, com uma sintaxe simples. Vc cria regras de estilo para elementos ou grupos de elementos.
+
+Ex: < a >
+
+a, p, h1, h3 {           |     "a, p, h1 e h3" são Seletores
+
+​	color: blue;         |      declaração
+
+​	font-size: 14px;  |      declaração
+
+No caso, no exemplo estamos mudando a cor para azul e o tamanho da fonte para 14 pixels nos elementos "a, p, h1 e h3". Há muitas outras propriedaes além dessas.
+
+Seletores - são elementos HTML
+
+Declarações - ficam dentro de um par de chaves ({}), formadas por uma propriedade + um valor
+
+Seguindo o exemplo, todas as fontes dos setores citados teriam a mesma cor e tamanho de fonte no site. Porém, às vezes precisamos de mais de um tipo de propriedade em elementos de um mesmo setor. Por exemplo, podemos ter vários headers num mesmo site, mas eles não precisam ter a mesma cor/tamanho. É aí que entram os IDs e classes.
+
+E há um último detalhe nesse exemplo: a pseudo-classe. Elementos HTML sofrem alterações causadas pela interação do usuário, como mover o mouse por cima ou clicar nesse elemento.
+
+O *a:hover* do exemplo significa que a âncora também terá essa aparência quando o usuário passar o mouse por cima de um *hyperlink*.
+
+### IDs e Classe
+
+Seletor representa elementos HTML. IDs e classes podem representar qualquer tipo de elemento e há algumas diferenças entre eles. No HTML vc declara o id com a palavra ID e a classe com a palavra class. No CSS, uma classe é precedida por um . e um ID é precedido por um #. Um ID, no CSS, só pode ser usado uma vez na página.
+
+Ex:
+
+.header {             <------ CLASSE
+
+​	padding: 10px;
+
+}
+
+
+
+#header {              <------- ID
+
+​	padding: 15px;
+
+}
+
+EX:
+
+< h1 id=title> pq não queremos que ele se repita
+
+< h2 class = subtitle>
+
+< h3 class = post_title>
+
+LEMBRAR DE COLOCAR # ANTES DO ID E . ANTES DA CLASSE, NA HORA DE CRIAR O GRUPO DE ELEMENTOS NO CSS (EX: #title, .subtitle, .post_title {
+
+\#title, .subtitle, .post_title {
+
+  color: blue;
+
+}
+
+
+
+.post_title {
+
+  font-size: 16px;
+
+  font-style: italic;
+
+}
+
+
+
+### Conceitos básicos
+
+Quando fazemos o layout de um site, cada elemento HTML é representado por uma caixa retangular, o BOX MODEL. Com o CSS conseguimos alterar a aparência da caixa. O **box model** tem 4 áreas
+
+**Margin** - espaçamento entre elementos
+
+**Border** - circundam o padding e o content. podemos alterar sua aparência, como largura e cor
+
+**Padding** - espaçamento entre border e content
+
+**Content** - o que o bloco representa. texto, imagem ou vídeo
+
+Exercício: para enxergarmos o box model vamos adicionar cores e bordas a alguns elementos.
+
+![Para iniciantes](https://tableless.github.io/iniciantes/assets/img/box-model.png)
+
+### Estilizando elementos
+
+**Padding e margin** - usamos da forma mais básica, com apenas um valor. Mas se quisermos, podemos atribuir tamanhos diferentes para cada lado. Há 3 formas de fzr isso:
+
+**PADRÃO: USE PADDING-LEFT COM 15PX**
+
+**1 -** Colocando um valor para as partes superior e inferior (eixo y). E, depois, para os lados esquerdo e direito (eixo x). 
+
+Ex: nele, 10px se refere ao eixo y e 5px ao eixo x
+
+ .post {
+
+​	padding: 10px 5px;
+
+}
+
+**2 -** Um valor para cada lado. Sempre nessa ordem: Topo, direita, inferior, esquerda
+
+Ex: nele, 15px se refere ao topo, 10px direita, 5px inferior, 0 esquerda
+
+.post {
+
+​	padding: 15px 10px 5px 0;
+
+}
+
+**3 -** Usando as propriedades específicas para cada lado. Mais usado quando temos um padding com 3 margens iguais e só uma diferente.
+
+Ex:
+
+.post {
+
+​	padding/margin-top: 15px;
+
+​	padding/margin-right: 10px;
+
+​	padding/margin-bottom: 5px;
+
+​	padding/margin-left: 0;
+
+}
+
+### Background
+
+É um atalho pra várias outras propriedades. Podemos mudar cor do fundo, colocar uma imagem, alterar posicionamento da imagem. Estudar pelo Mozilla Develop Network (MDN). Por enquanto vamos ver apenas como mudar a cor de fundo.
+
+Para mudar a cor, podemos usar:
+
+.post {
+
+​	background-color: green;
+
+​	background-color: #008800;
+
+​	background: green ou #008800;
+
+}
+
+### Border
+
+Tem:
+
+**Largura:** pode ser representada por pixels, cm, mm...
+
+**Estilo:** sólida (solid), pontilhada (dotted) ou tracejada (dashed)
+
+**Cor:** nome da cor ou código com # (ex: blue, ou #0000ff)
+
+}
+
+Ex:
+
+border: 3px solid blue;
+
+border-top: 2px dotted green
+
+border-right: 4px dashed pink;
+
+Você pode alterar cada lado da border, basta usar border-top, border-right, border-bottom ou border-left, lembrando de trazer largura, estilo e cor.
+
+Tb é possível usar as propriedades específicas pra cada aspecto da borda, sem usar o comando da border. São eles:
+
+border-width = para a largura
+
+border-color = para a cor
+
+border-style = para o estilo
+
+Há também comando para criar um regra ainda mais específica, alterando determinado aspecto de cada lado da border. Ex:
+
+.post {
+
+​	**border-top-width: 3px;**    <--- alterando largura da parte superior da borda
+
+​	**border-top-color: blue;**    <---- alterando cor da parte superior
+
+​	**border-top-style: solid;**   <---- alterando estilo da parte superior
+
+### Border radius
+
+Última propriedade. Permite arredondar os cantos de um elemento. Aceita várias unidades, mas os mais comuns são px e %. Usando apenas 1 valor, alteramos todos os cantos do elemento. Mas podemos seguir a ordem topo, direita, inferior, esquerda, para alterar cada canto em separado.
+
+Ex: 
+
+border-radius: 10% 20% 15% 22%;
+
+Se você tem um elemento quadrado e quer transformá-lo num círculo, por ex, use border-radius: 50%
+
+--
+
+Uma boa prática é manter sempre as margens na mesma direção. Então, para dar espaçamento entre elementos, escolha colocar a margem só acima ou abaixo
+
+### Estilizando textos
+
+O texto é muito importante. 
+
+#### **font-family =** altera fontes do nosso texto. podemos usar fontes da web ou da nossa máquina. vamos ver web-safe fonts, que estão na maior parte de dispositivos.
+
+Ex 1:
+
+#title {
+
+​	font-family: Verdana;     **<--- adicionar só 1 fonte**
+
+}
+
+Ex 2:
+
+.post_title {
+
+​	font-family: Verdana, Arial;   **<-- adicionar 2. a segunda fica de backup caso a primeira n funcione**
+
+}
+
+#### **font-size =** altera o tamanho do texto. existem algumas unidades que podemos usar. por enquanto usaremos px.
+
+Ex:
+
+.post_title {
+
+​	font-size: 18px;
+
+}
+
+#### font-style = altera a aparência do texto. o valor "normal" é o padrão. também podemos usar "italic", se a fonte tiver suporte para tal.
+
+Ex 1:
+
+.subtitle {
+
+​	font-style: normal;
+
+}
+
+Ex 2:
+
+.subtitle {
+
+​	font-style: italic;
+
+}
+
+#### font-weight = altera o peso do texto. existe o normal e o bold (negrito). também podemos usar valores numéricos, em fontes mais complexas.
+
+Ex:
+
+.subtitle {
+
+​	font-style: bold;
+
+}
+
+#### text-transform = alterna o txt entre maiúsculas e minúsculas. "uppercase" todo o texto em caixa alta, "lowercase" em caixa baixa e "capitalize"põe todas as primeiras letras de cada palavra em maiúsculo.
+
+#### text-decoration = serve para dar destaque ao txt, adicionando linhas. valores são "underline", que sublinha abaixo do texto, "overline", linha acima, "line-through" corta a palavra com uma linha ao centro
+
+### Estilizando listas
+
+Existem listas não ordenada e ordenadas.
+
+#### list-style-type = altera o símbolo/marcador. existem vários para as listas ul (não-ordenadas) e ol (ordenadas).
+
+Ex 1:
+
+ul {
+
+​	list-style-type: square;   **<--- altera o símbolo da lista para quadrado**
+
+}
+
+Ex 2:
+
+ol {
+
+​	list-style-type: upper-roman;  **<--- altera a numeração da lista para algarismos romanos**
+
+}
+
+Ex 3:
+
+ul {
+
+list-style-type: "\1F44D"; **<--- altera para qualquer símbolo, no caso desse código, um joinha**
+
+}
+
+Ex 4:
+
+list-style-type: none; <--- remove os símbolos
+
+#### list-style-image = adiciona imagem como marcador nas listas. 
+
+Ex:
+
+ul {
+
+​	list-style-image: url("rocket.png")
+
+}
+
+A lista de contato é um item < ul>. Dentro dela há os contatos, que são itens < li>. Dentro dos contatos, há os links, que são < a>. Para alterar os links, basta unir todas elas para abrir a seguinte classe:
+
+.contacts_list li a {
+
+​	e_fazer_suas_alterações :laughing:
+
+}
+
+### Propriedades de dimensões e alinhamento
+
+Dimensão e alinhamento são muito importantes no layout. Em px ou %
+
+**Referentes a dimensões**
+
+Width = ajusta largura
+
+Height = ajusta altura
+
+Max-width = largura máxima do elemento
+
+Max-height = altura máxima do elemento
+
+**Referentes a alinhamentos**
+
+Margin = serve para colocar espaçamento entre elementos. tem valor "auto" e serve para alinhar elementos automaticamente.
+
+Text align = alinha textos. para alinhar a esquerda, use valor left, direita, right, centro, center, etc. justifica o texto com o valor justify.
+
+**Dica: para fazer a imagem respeitar a largura do elemento, caso ela o ultrapasse, é adicionar a ela o comando "width: 100%;"**
+
