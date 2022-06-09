@@ -69,7 +69,7 @@ margin: 5px;
 
 < /style>
 
-É na tag < body> que você cria os itens filhos. Você adiciona a classe flex a tag < div>, assim, ex:
+E, na tag < body>, crie os itens filhos. Você adiciona a classe "flex" a tag < div>-mãe e a classe "item" aos < div>-filhod, assim, ex:
 
 < body>
 
@@ -102,4 +102,6 @@ Isso é muito útil pq é muito comum usar a orientação dos elementos em tela 
 * wrap: permite a quebra de linha assim que um dos flex itens não puder mais ser compactado, para evitar que itens vazem e deixem tudo horroroso. Começa na linha de cima e quando fica cheio desde para a linha de baixo.
 * wrap-reverse: mesma lógica do wrap, mas no sentido contrário. Começando na linha de baixo e, quando não couber mais, o resto vai para a linha de cima.
 
-# VOU PARA ESTRUTURA BÁSICA COM FLEX FLOW
+# Estrutura básica com flex flow
+
+É um atalho para flex-direction e flex-wrap. Ao invés de utilizarmos duas linhas para essas propriedades, podemos dizer esses valores em apenas 1 linha. 
