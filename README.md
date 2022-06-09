@@ -8,3 +8,4 @@ Repositório criado para o Desafio de Projeto
 [Encurtador de imagens](https://tinypng.com/)
 [Tabela de cores HTML CSS](https://www.phylos.net/2021-10-04/tabela-de-cores-html-css/)
 [Paletas de cores CSS](https://mybrandnewlogo.com/pt/gerador-de-paleta-de-cores)
+[Explicação Box Model](https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
