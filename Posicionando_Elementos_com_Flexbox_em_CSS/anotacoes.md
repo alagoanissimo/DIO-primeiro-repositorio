@@ -83,7 +83,7 @@ E, na tag < body>, crie os itens filhos. Você adiciona a classe "flex" a tag < 
 
 ### Estrutura básica do Flex direction
 
-É a propriedade que estabelece eixos dentro do container, definindo assim o comportamento dos itens. A direção que os itens são colocados no flex container. 
+Pertence ao flex container. É a propriedade que estabelece eixos dentro do container, definindo assim o comportamento dos itens. A direção que os itens são colocados no flex container. 
 
 Os eixos são:
 
@@ -96,7 +96,7 @@ Isso é muito útil pq é muito comum usar a orientação dos elementos em tela 
 
 # Estrutura básica do flex wrap
 
-É a propriedade que define se os itens devem ou não quebrar a linha. Por padrão eles não quebram linha, compactando eles dentro do limite do seu próprio conteúdo e do container. 
+Pertence ao flex container. É a propriedade que define se os itens devem ou não quebrar a linha. Por padrão eles não quebram linha, compactando eles dentro do limite do seu próprio conteúdo e do container. 
 
 * nowrap: é o padrão, não permite a quebra de linha.
 * wrap: permite a quebra de linha assim que um dos flex itens não puder mais ser compactado, para evitar que itens vazem e deixem tudo horroroso. Começa na linha de cima e quando fica cheio desde para a linha de baixo.
@@ -104,4 +104,82 @@ Isso é muito útil pq é muito comum usar a orientação dos elementos em tela 
 
 # Estrutura básica com flex flow
 
-É um atalho para flex-direction e flex-wrap. Ao invés de utilizarmos duas linhas para essas propriedades, podemos dizer esses valores em apenas 1 linha. 
+Pertence ao flex container. É um atalho para flex-direction e flex-wrap. Ao invés de utilizarmos duas linhas para essas propriedades, podemos dizer esses valores em apenas 1 linha. 
+
+Ex: 
+
+**adicione essa classe na tag < style>:**
+
+.rr-wrap{
+
+​    flex-flow: row-reverse wrap-reverse;
+
+  }
+
+**adicione essa tag+família na tag < body>:**
+
+< h1>row-reverse wrap-reverse</h1>
+    < div class="flex-container rr-wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>   
+        <div class="item">6</div> 
+    </ div>
+
+# Estrutura básica do justify content
+
+Pertence ao flex container. Essa propriedade se encarrega do alinhamento dos itens no container e da distribuição de espaço entre eles. Se há itens-filhos ocupados 100% do espaço do container, sem margem ou algo do tipo, esse comando não se aplica.
+
+Variações:
+
+* flex-start: alinha no início do container.
+* flex-end: leva os itens, de acordo com a sobra de espaço e respeitando o limite do conteúdo, pro fim do container.
+* center: leva todos os elementos para o início do container.
+* space-between: cria um espaço igual entre os elementos. ele pega o primeiro elemento e coloca muito próximo a borda esquerda do elemento, início, e leva o último para a borda direita, final do elemento.
+* space-around: trata do espaçamento do meio, tornando-o duas vezes maior que o inicial e o final. O primeiro espaçamento do elemento 1 p/ esquerda e do elemento 5 p/ direita são iguais. 
+
+# Estrutura básica e prática com align items
+
+Trata do alinhamento dos flex items de acordo com o eixo do container. Ele é diferente para eixo em colunas e eixo em linhas. Permite o alinhamento central no eixo vertical. Alinhamento total ao centro. Não precisa necessariamente saber a altura dos itens-filhos, ao contrário do justify content, que aplica altura no container. O align items pega a proporcionalidade e expande os elementos. 
+
+### Tipos de alinhamento
+
+* center: alinhamento dos itens ao centro
+* stretch: padrão, faz com que flex itens cresçam igualmente, de acordo com o maior item do container
+* flex-start: alinha os itens do início do container (parte de cima)
+* flex-end: alinha os itens no fim do container (parte de baixo). muito útil para gráficos
+* baseline: alinha de acordo com a linha base da tipografia dos itens
+
+### Para atingir o alinhamento total ao centro com align-items, faça:
+
+**Crie uma < section> com a classe container central center dentro da tag < body>. Dentro da section, crie uma tag de texto < div> com a classe item, assim:**
+
+< section class="container central center">
+
+        < div class = "item">Lorem Ipsum is therefore always free from repetition.< /div>
+
+  < /section>
+
+**Depois, crie a classe central, assim:**
+
+.central{
+
+​    height: 500px;
+
+​    justify-content: center;
+
+​    align-items: center;
+
+  }
+
+**Por fim, crie a classe central novamente, mas dessa vez atingindo os itens que estão dentro da < section> que você criou no primeiro passo, assim:**
+
+.central .item{
+
+​    flex: 0;
+
+​    padding: 20px;
+
+  }
