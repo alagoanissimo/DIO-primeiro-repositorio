@@ -183,3 +183,45 @@ Trata do alinhamento dos flex items de acordo com o eixo do container. Ele é di
 ​    padding: 20px;
 
   }
+
+# Estrutura básica align content
+
+Última propriedade relacionada ao flex container. É responsável por tratar o alinhamento no eixo vertical. 
+
+Ele precisa respeitar algumas orientações:
+
+* Container precisa utilizar quebra de linhas
+* A altura do container precisa ser maior que a soma das linhas dos itens. Ex: supondo que a altura das suas linhas é de 20px, 40px na soma, é preciso que o container seja maior que a soma dessas linhas
+
+**Tipos de alinhamento**
+
+* center = alinhamento ao centro
+* stretch = padrão, faz com que os itens cresçam igualmente tendo como base o maior deles
+* flex-start = alinha itens no início
+* flex-end = alinha itens no final
+* space-between = cria espaçamento igual entre os elementos
+* space-around = espaçamentos do meio são duas vezes maiores que os do início e do final
+
+# Propriedades relacionadas aos flex items
+
+### Estrutura básica flex-grow
+
+Define a proporcionalidade de crescimento dos items, sempre respeitando o tamanho de seus conteúdos internos. Não permite que o conteúdo vaze, etc.
+
+Não funciona caso tenhamos adicionado justify-content ao flex container. Só se pode trabalhar usando NÚMEROS, ou 0 ou algum número relacionado à proporção de crescimento. Quando se aumenta o valor do fg-, aumenta o tamanho do item.
+
+### Estrutura básica flex-basis
+
+Propriedade que estabelece o tamanho inicial dos items antes da distribuição do espaço restante dentro dele, usando como base o conteúdo interno disposto. É como se ela pegasse o tamanho mínimo que ele vai precisar ter. Depois, distribui o tamanho da sobra de espaço antes e após o conteúdo.
+
+**Valores possíveis**:
+
+* auto: quando o item nao tiver tamanho pré-definido, ele será proporcional ao conteúdo. se tiver flex grow definido tentará adaptar os itens tomando o tamanho mínimo sempre igual ao total do container.
+* px, %, em, ...: esse valor é o tamanho mínimo que o item vai ter. a partir do momento em que o conteúdo interno do item for muito maior que o valor mínimo definido, ele crescerá até não ter mais espaço e poderá até vazar do item. assim, passa a não valer
+* 0 (zero): temos uma relação direta com a definição do flex-grow. se tivermos um flex-grow definido em 1 e um flex-basis em outro valor, precisaremos nos preocupar com o crescimento do item e a distribuição do espaço que sobrará ao redor do flex item.
+
+basis + widht = é a ligação do basis com o tamanho mínimo referente ao conteúdo. ele é utilizado relacionado ao grow pq este tem relação com o máximo de crescimento do espaço que restará no item. ou seja, como ele vai crescer
+
+### Estrutura básica flex-shrink
+
+Estabelece a capacidade de redução ou compressão do tamanho de um item. Temos o tamanho de um item, ele vai ter alguns comportamenmtos esperados. Se o shrink for em 1 permite que os itens tenham seus tamanhos reduzidos proporcionalmente, se shrink estiver em 0 ele não permite a redução dos itens, uma vez que você tenha o seu basis setado em 100px por ex. se a propriedade estiver em 2, 3 ou mais, significa que o item poderá ser reduzido 2, 3 vezes ou quantas forem necessária.
