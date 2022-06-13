@@ -130,6 +130,8 @@ Ex:
 
 # Estrutura básica do justify content
 
+Trata do eixo x
+
 Pertence ao flex container. Essa propriedade se encarrega do alinhamento dos itens no container e da distribuição de espaço entre eles. Se há itens-filhos ocupados 100% do espaço do container, sem margem ou algo do tipo, esse comando não se aplica.
 
 Variações:
@@ -141,6 +143,8 @@ Variações:
 * space-around: trata do espaçamento do meio, tornando-o duas vezes maior que o inicial e o final. O primeiro espaçamento do elemento 1 p/ esquerda e do elemento 5 p/ direita são iguais. 
 
 # Estrutura básica e prática com align items
+
+É o alinhamento no eixo y
 
 Trata do alinhamento dos flex items de acordo com o eixo do container. Ele é diferente para eixo em colunas e eixo em linhas. Permite o alinhamento central no eixo vertical. Alinhamento total ao centro. Não precisa necessariamente saber a altura dos itens-filhos, ao contrário do justify content, que aplica altura no container. O align items pega a proporcionalidade e expande os elementos. 
 
@@ -225,3 +229,90 @@ basis + widht = é a ligação do basis com o tamanho mínimo referente ao conte
 ### Estrutura básica flex-shrink
 
 Estabelece a capacidade de redução ou compressão do tamanho de um item. Temos o tamanho de um item, ele vai ter alguns comportamenmtos esperados. Se o shrink for em 1 permite que os itens tenham seus tamanhos reduzidos proporcionalmente, se shrink estiver em 0 ele não permite a redução dos itens, uma vez que você tenha o seu basis setado em 100px por ex. se a propriedade estiver em 2, 3 ou mais, significa que o item poderá ser reduzido 2, 3 vezes ou quantas forem necessária.
+
+Por ex, no comando:
+
+  < div class="flex-container">
+        < div class="item s-1 fg-1">A</div>
+        <d iv class="item s-1 fg-1">Neque porro quisquam est qu</div>
+        <d iv class="item s-1 fg-1">C</div>
+        < div class="item s-1 fg-1">D</div>
+        < div class="item s-1 fg-1">E</div>
+    </div >
+
+Vemos um elemento com mais conteúdo se expandindo, enquanto os outros se comprimem.
+
+Quando o shrink é definido em 0, diz-se aos itens que não é permitido diminuir. Para isso precisamos de outra propriedade relacionada a ele, o flex-basis definido com algum valor.
+
+### Estrutura básica com flex
+
+Essa propriedade é um atalho/abreviação para as propriedades grow, shrink e basis nessa ordem.
+
+Quando estamos lidando com basis em 0 e fazendo a interação com shrink e grow, é que quando o basis é definido em 0 o width é ignorado
+
+### Estrutura básica com order
+
+Lida com a ordenação dos flex itens. Quando não se especifica, o código coloca na ordem de inserção dos flex items. Para alterar a ordem, basta criar classes de ordenamento, assim:
+
+ .o1{
+
+​      order: 1;
+
+​    }
+
+
+
+​    .o2{
+
+​      order: 2;
+
+​    }
+
+
+
+​    .o3{
+
+​      order: 3;
+
+​    }
+
+
+
+​    .o4{
+
+​      order: 4;
+
+​    }
+
+E, depois, adicioná-las à classe dos flex items, assim:
+
+< div class="item o1">4m</ div>
+
+É possível fazer em row e em column, basta criar uma classe .direction e modificar a flex-direction e adicionar "direction" ao < div> com classe flex-container. Também é possível definir a ordem usando números negativos
+
+### Estrutura básica align-self
+
+Estabelece o alinhamento de modo individual para cada flex item. Com o align items, fazemos o alinhamento no container. Com o align self, trabalhamos o alinhamento individualmente, fora do padrão.
+
+Valores possíveis:
+
+* auto: valor padrão, respeita a definição de align-items do container
+* flex-start: ao início do container
+* flex-end: ao final do container
+* center: relativo ao centro de acordo com o eixo
+* stretch: faz com que o elemento ocupe todo o espaço, com proporcionalidade e alturas definidas igualmente
+* baseline: usa a linha base da tipografia para alinhar
+
+# FLEX PROJETO
+
+<link rel="preconnect" href="https://fonts.googleapis.com"
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400"
+
+VOU PRA ORGANIZANDO A INTERFACE PARTE 2
+
+Comando .group:nth-child() { <-- Seleciona flex items de determinado container. Para isso, basta colocar o número entre os ()
+
+overflow: hidden; <-- esconde o excesso da imagem que está fora da borda
