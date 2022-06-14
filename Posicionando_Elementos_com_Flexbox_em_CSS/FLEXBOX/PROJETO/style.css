@@ -242,10 +242,20 @@ footer{
     height: 70px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 80px;
 }
 
 footer .footer{
     justify-content: space-between;
+    color: #fff;
+}
+
+.footer-links li a{
+    color: #fff;
+}
+
+.footer p{
     color: #fff;
 }
 
